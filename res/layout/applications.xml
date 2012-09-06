@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pine"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <!-- <ScrollView -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" > -->
+ <Spinner
+            android:id="@+id/spinner_brightness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <SeekBar
+            android:id="@+id/sbWind"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/tvWindKts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="30"
+            android:paddingLeft="5dp"
+            android:text="0%"
+            android:textColor="@android:color/white"
+            android:textSize="11dp" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner_on_off_application"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Switch
+            android:id="@+id/switch_main_bedroom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView_bulb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:src="@drawable/bulb_off" />
+    </LinearLayout>
+
+</LinearLayout><!-- </ScrollView> -->
