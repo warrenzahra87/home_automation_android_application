@@ -6,10 +6,9 @@ import android.os.Bundle;
 
 public class FrontGarage extends RoomApplication {
 
-
 	ArrayList<NameAndURL> switchingList;
 	ArrayList<NameAndURL> brightnessList;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,20 +19,31 @@ public class FrontGarage extends RoomApplication {
 		addSwitchingList();
 		addBrightnessList();
 	}
-	
-	public void addSwitchingList(){
-		switchingList.add(new NameAndURL("main garage switch 1",	Constants.MAIN_BEDROOM_URL + Constants.LIGHT + "/REGULAR/switch1"));
-		switchingList.add(new NameAndURL("main garage switch 2",	Constants.MAIN_BEDROOM_URL + Constants.LIGHT + "/REGULAR/switch2"));
-		switchingList.add(new NameAndURL("main garage switch 3",	Constants.MAIN_BEDROOM_URL + Constants.LIGHT + "/REGULAR/switch3"));
+
+	public void addSwitchingList() {
+		switchingList.add(new NameAndURL("main garage switch 1",
+				Constants.MAIN_BEDROOM_URL + Constants.LIGHT
+						+ "/REGULAR/switch1"));
+		switchingList.add(new NameAndURL("main garage switch 2",
+				Constants.MAIN_BEDROOM_URL + Constants.LIGHT
+						+ "/REGULAR/switch2"));
+		switchingList.add(new NameAndURL("main garage switch 3",
+				Constants.MAIN_BEDROOM_URL + Constants.LIGHT
+						+ "/REGULAR/switch3"));
 		super.addItemsOnSpinnerSwitch(switchingList);
 	}
-	
-	public void addBrightnessList(){
-		brightnessList.add(new NameAndURL("main garage brightness 1",Constants.MAIN_BEDROOM_URL + Constants.LIGHT + "/PWM/ceilingLight1"));
-		brightnessList.add(new NameAndURL("main garage brightness 2",Constants.MAIN_BEDROOM_URL + Constants.LIGHT + "/PWM/ceilingLight2"));
-		brightnessList.add(new NameAndURL("main garage brightness 3",Constants.MAIN_BEDROOM_URL + Constants.LIGHT + "/PWM/ceilingLight3"));
+
+	public void addBrightnessList() {
+		brightnessList.add(new NameAndURL("main garage brightness 1",
+				Constants.MAIN_BEDROOM_URL + Constants.LIGHT
+						+ "/PWM/ceilingLight1"));
+		brightnessList.add(new NameAndURL("main garage brightness 2",
+				Constants.MAIN_BEDROOM_URL + Constants.LIGHT
+						+ "/PWM/ceilingLight2"));
+		brightnessList.add(new NameAndURL("main garage brightness 3",
+				Constants.MAIN_BEDROOM_URL + Constants.LIGHT
+						+ "/PWM/ceilingLight3"));
 		super.addItemsOnSpinnerBrightness(brightnessList);
 	}
-	
-	
+
 }

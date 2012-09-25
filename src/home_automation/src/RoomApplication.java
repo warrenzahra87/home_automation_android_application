@@ -3,22 +3,21 @@ package home_automation.src;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class RoomApplication extends Activity implements OnClickListener,
 		OnCheckedChangeListener, OnSeekBarChangeListener,
@@ -35,9 +34,7 @@ public class RoomApplication extends Activity implements OnClickListener,
 	ArrayList<NameAndURL> switchingList;
 	ArrayList<NameAndURL> brightnessList;
 
-
-	
-	public void setOnCreate(){
+	public void setOnCreate() {
 		sideLightSwitch = (Switch) findViewById(R.id.switch_main_bedroom);
 		bulb = (ImageView) findViewById(R.id.imageView_bulb);
 		sideLightSwitch.setOnCheckedChangeListener(this);
@@ -103,7 +100,7 @@ public class RoomApplication extends Activity implements OnClickListener,
 	public void onProgressChanged(SeekBar seekBar, int progress,
 			boolean fromUser) {
 		tv.setText(String.valueOf(progress));
-	
+
 	}
 
 	public void onStartTrackingTouch(SeekBar seekBar) {
@@ -112,7 +109,7 @@ public class RoomApplication extends Activity implements OnClickListener,
 	}
 
 	public void onStopTrackingTouch(SeekBar seekBar) {
-		Toast.makeText(this,String.valueOf(seekBar.getProgress()),
+		Toast.makeText(this, String.valueOf(seekBar.getProgress()),
 				Toast.LENGTH_SHORT).show();
 		WebServiceTask task = new WebServiceTask();
 		task.execute(new String[] { URLBrightness + "/" + seekBar.getProgress() });

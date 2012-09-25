@@ -10,18 +10,19 @@ public class SplashScreen extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
-		
+
 		Thread timer = new Thread() {
 			public void run() {
-				try{
+				try {
 					sleep(1000);
-				}catch (InterruptedException e) {
+				} catch (InterruptedException e) {
 					e.printStackTrace();
-			}finally{
-					Intent openStartingPoint = new Intent(SplashScreen.this,Rooms.class);
+				} finally {
+					Intent openStartingPoint = new Intent(SplashScreen.this,
+							Rooms.class);
 					startActivity(openStartingPoint);
 					finish();
-			}
+				}
 			}
 		};
 		timer.start();
